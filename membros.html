@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerir Membros - ENGLISH PRACTICE</title>
+    <link rel="stylesheet" href="bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <i class="bi bi-list menu-icon" id="btn-menu"></i>
+            <h1><i class="bi bi-book"></i> ENGLISH PRACTICE</h1>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>MENU PRINCIPAL</h2>
+            <i class="bi bi-x-lg" id="btn-fechar"></i>
+        </div>
+        <nav>
+            <a href="index.html"><i class="bi bi-house-door"></i> Início</a>
+            <a href="membros.html" class="ativo"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="config.html"><i class="bi bi-gear"></i> Definições</a>
+            <a href="relatorios.html"><i class="bi bi-files"></i> Banco de Perguntas</a>
+        </nav>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Gerir Membros da Turma</h2>
+            </div>
+            <p class="card-desc">Adicione ou remova membros para o "Modo Rifa"</p>
+
+            <div class="form-group" style="display:flex; gap:10px;">
+                <input type="text" id="input-novo-membro" placeholder="Digite o nome do membro" style="flex:1; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
+                <button class="btn-principal" id="btn-add-membro" style="width:auto; padding:12px 20px;">Adicionar</button>
+            </div>
+
+            <h3 style="margin-top:20px; margin-bottom:10px; font-size:16px;">Lista de Membros: <span id="total-membros">0</span></h3>
+            <ul id="lista-membros" style="list-style:none;">
+                <!-- Os membros vão aparecer aqui via JS -->
+            </ul>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

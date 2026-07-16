@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco de Perguntas - ENGLISH PRACTICE</title>
+    <link rel="stylesheet" href="bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <i class="bi bi-list menu-icon" id="btn-menu"></i>
+            <h1><i class="bi bi-book"></i> ENGLISH PRACTICE</h1>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>MENU PRINCIPAL</h2>
+            <i class="bi bi-x-lg" id="btn-fechar"></i>
+        </div>
+        <nav>
+            <a href="index.html"><i class="bi bi-house-door"></i> Início</a>
+            <a href="membros.html"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="config.html"><i class="bi bi-gear"></i> Definições</a>
+            <a href="relatorios.html" class="ativo"><i class="bi bi-files"></i> Banco de Perguntas</a>
+        </nav>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+<main class="container">
+    <div class="card">
+        <div class="card-header"><h2>Cadastrar Nova Pergunta</h2></div>
+        <div class="form-group">
+            <label for="tema-pergunta">Tema</label>
+            <input type="text" id="tema-pergunta" placeholder="Ex: Verb to be, Days of the week" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
+        </div>
+        <div class="form-group">
+            <label for="texto-pergunta">Pergunta</label>
+            <textarea id="texto-pergunta" rows="3" placeholder="Ex: What is the past of 'go'?" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="resposta-pergunta">Resposta Correta</label>
+            <input type="text" id="resposta-pergunta" placeholder="Ex: went" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
+        </div>
+        <div class="form-group">
+    <label for="traducao-pergunta">Tradução da Pergunta</label>
+    <input type="text" id="traducao-pergunta" placeholder="Que dia vem depois de Segunda?">
+</div>
+        <button class="btn-principal" id="btn-salvar-pergunta">Salvar no Banco</button>
+        <div class="card" style="margin-top:20px;">
+    <div class="card-header"><h2>Banco de Perguntas: <span id="total-perguntas">0</span></h2></div>
+    <div id="lista-perguntas"></div>
+    
+    <div style="display:flex; gap:10px; margin-top:20px;">
+        <button class="btn-principal" id="btn-exportar">Exportar banco.json</button>
+        <label for="btn-importar" class="btn-principal" style="background:#6B7280; text-align:center; cursor:pointer;">Importar banco.json</label>
+        <input type="file" id="btn-importar" accept=".json" style="display:none;">
+    </div>
+    <button class="btn-principal" id="btn-limpar-bd" style="background:var(--vermelho--); margin-top:10px;">Limpar Banco</button>
+</div>
+    </div>
+
+    <div class="card" style="margin-top:20px;">
+        <div class="card-header"><h2>Banco de Perguntas: <span id="total-perguntas">0</span></h2></div>
+        <div id="lista-perguntas"></div>
+        <button class="btn-principal" id="btn-limpar-bd" style="background:var(--vermelho--); margin-top:20px;">Limpar Banco</button>
+    </div>
+</main>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENGLISH PRACTICE - Gerador de Perguntas</title>
+    <link rel="stylesheet" href="bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <i class="bi bi-list menu-icon" id="btn-menu"></i>
+            <h1><i class="bi bi-book"></i> ENGLISH PRACTICE</h1>
+        </div>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>MENU PRINCIPAL</h2>
+            <i class="bi bi-x-lg" id="btn-fechar"></i>
+        </div>
+        <nav>
+            <a href="index.html" class="ativo"><i class="bi bi-house-door"></i> Início</a>
+            <a href="membros.html"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="config.html"><i class="bi bi-gear"></i> Definições</a>
+            <a href="relatorios.html"><i class="bi bi-files"></i> Banco de Perguntas</a>
+        </nav>
+    </aside>
+
+    <div class="overlay" id="overlay"></div>
+
+   <main class="container">
+    <!-- TELA 1: GERAR CONTEÚDO - SÓ APARECE SE FOR API -->
+    <div class="card" id="tela-gerar">
+        <div class="card-header">
+            <h2>Gerar Perguntas com API</h2>
+        </div>
+        <p class="card-desc">Cole o conteúdo da matéria. O sistema vai gerar perguntas novas.</p>
+
+        <div class="form-group">
+            <label for="box-msm">Conteúdo da Matéria</label>
+            <textarea id="box-msm" rows="6" placeholder="Cole aqui o conteúdo: Ex: Verbos, Dias da Semana..."></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="input-file">Anexar Documento</label>
+            <div class="file-box">
+                <input type="file" id="input-file" accept="image/*,.pdf,.docx">
+                <small style="color:#6B7280;">Formatos: PDF, DOCX, JPG, PNG</small>
+            </div>
+        </div>
+
+        <button type="submit" class="btn-principal" id="btn-gerar-api">
+            Gerar Perguntas
+        </button>
+    </div>
+
+    <!-- TELA 2: MODO RIFA - APARECE SE FOR BANCO DE DADOS -->
+    <div class="card" id="tela-rifa" style="display:none;">
+        <div class="card-header"><h2>Modo Rifa</h2></div>
+        <p class="card-desc">Usando Banco de Dados Local</p>
+        <p><b>Total de Membros:</b> <span id="total-membros-rifa">0</span></p>
+        <p><b>Total de Perguntas no Banco:</b> <span id="total-perguntas-rifa">0</span></p>
+
+        <div id="card-membro-sorteado" style="display:none; text-align:center; margin:20px 0;">
+            <h3>Membro Sorteado</h3>
+            <p id="nome-membro-sorteado" style="font-size:1.5em; font-weight:bold;"></p>
+        </div>
+
+        <button class="btn-principal" id="btn-sortear-membro" style="margin-top:20px;">
+            <i class="bi bi-shuffle"></i> Sortear Membro
+        </button>
+    </div>
+
+    <!-- TELA 3: PERGUNTAS -->
+    <div id="tela-perguntas" class="tela" style="display:none;">
+    <div class="card">
+        <h2 id="contador-pergunta">Pergunta 1 de 2</h2>
+        <div id="timer" style="font-size:2em; text-align:center; color:var(--vermelho--); font-weight:bold;">30s</div>
+        <div style="margin: 20px 0;">
+            <h3 id="texto-pergunta-atual"></h3>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:20px;">
+            <button class="btn-principal" id="btn-errou" style="background:var(--vermelho--); flex:1;">Errou</button>
+            <button class="btn-principal" id="btn-acertou" style="background:#16A34A; flex:1;">Acertou</button>
+        </div>
+    </div>
+</div>
+
+    <!-- TELA 4: RESULTADO -->
+ <div id="tela-final" class="tela" style="display:none;">
+    <div class="card">
+        <h2>Resultado da Rifa</h2>
+        <div id="ranking-lista"></div>
+        <button class="btn-principal" id="btn-reiniciar" style="margin-top:20px;">Nova Rifa</button>
+    </div>
+</div>
+</main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {"tema": "Days of the Week", "pergunta": "What day comes after Monday?", "traducao": "Que dia vem depois de Segunda-feira?", "resposta": "Tuesday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Tuesday?", "traducao": "Que dia vem depois de Terça-feira?", "resposta": "Wednesday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Wednesday?", "traducao": "Que dia vem depois de Quarta-feira?", "resposta": "Thursday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Thursday?", "traducao": "Que dia vem depois de Quinta-feira?", "resposta": "Friday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Friday?", "traducao": "Que dia vem depois de Sexta-feira?", "resposta": "Saturday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Saturday?", "traducao": "Que dia vem depois de Sábado?", "resposta": "Sunday"},
+  {"tema": "Days of the Week", "pergunta": "What day comes after Sunday?", "traducao": "Que dia vem depois de Domingo?", "resposta": "Monday"},
+  {"tema": "Days of the Week", "pergunta": "What are the weekend days?", "traducao": "Quais são os dias do fim de semana?", "resposta": "Saturday and Sunday"},
+  {"tema": "Days of the Week", "pergunta": "How many days are in a week?", "traducao": "Quantos dias tem em uma semana?", "resposta": "Seven"},
+  {"tema": "Days of the Week", "pergunta": "What day is today?", "traducao": "Que dia é hoje?", "resposta": "Today is"},
+  {"tema": "Days of the Week", "pergunta": "What day was yesterday?", "traducao": "Que dia foi ontem?", "resposta": "Yesterday was"},
+  {"tema": "Days of the Week", "pergunta": "What day will be tomorrow?", "traducao": "Que dia será amanhã?", "resposta": "Tomorrow will be"},
+
+  {"tema": "Months of the Year", "pergunta": "What is the first month of the year?", "traducao": "Qual é o primeiro mês do ano?", "resposta": "January"},
+  {"tema": "Months of the Year", "pergunta": "What month comes after March?", "traducao": "Que mês vem depois de Março?", "resposta": "April"},
+  {"tema": "Months of the Year", "pergunta": "What month comes after June?", "traducao": "Que mês vem depois de Junho?", "resposta": "July"},
+  {"tema": "Months of the Year", "pergunta": "What month comes after October?", "traducao": "Que mês vem depois de Outubro?", "resposta": "November"},
+  {"tema": "Months of the Year", "pergunta": "In which month is Christmas?", "traducao": "Em qual mês é o Natal?", "resposta": "December"},
+  {"tema": "Months of the Year", "pergunta": "In which month is Valentine's Day?", "traducao": "Em qual mês é o Dia dos Namorados?", "resposta": "February"},
+  {"tema": "Months of the Year", "pergunta": "How many months are in a year?", "traducao": "Quantos meses tem em um ano?", "resposta": "Twelve"},
+  {"tema": "Months of the Year", "pergunta": "What is the last month of the year?", "traducao": "Qual é o último mês do ano?", "resposta": "December"},
+  {"tema": "Months of the Year", "pergunta": "What month comes before January?", "traducao": "Que mês vem antes de Janeiro?", "resposta": "December"},
+  {"tema": "Months of the Year", "pergunta": "Which month has 31 days?", "traducao": "Qual mês tem 31 dias?", "resposta": "January"},
+  {"tema": "Months of the Year", "pergunta": "Which month is the shortest?", "traducao": "Qual mês é o mais curto?", "resposta": "February"},
+
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I go to the bathroom?", "traducao": "Posso ir ao banheiro?", "resposta": "Yes, you can"},
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I use your phone?", "traducao": "Posso usar o seu telefone?", "resposta": "Yes, you can"},
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I open the window?", "traducao": "Posso abrir a janela?", "resposta": "Yes, you can"},
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I sit here?", "traducao": "Posso sentar aqui?", "resposta": "Yes, you can"},
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I borrow your pen?", "traducao": "Posso pegar emprestado sua caneta?", "resposta": "No, you can't"},
+  {"tema": "Asking Permission - Can I", "pergunta": "Can I eat in class?", "traducao": "Posso comer na aula?", "resposta": "No, you can't"},
+
+  {"tema": "Asking Permission - May I", "pergunta": "May I come in?", "traducao": "Posso entrar?", "resposta": "Yes, you may"},
+  {"tema": "Asking Permission - May I", "pergunta": "May I ask a question?", "traducao": "Posso fazer uma pergunta?", "resposta": "Yes, you may"},
+  {"tema": "Asking Permission - May I", "pergunta": "May I leave early?", "traducao": "Posso sair mais cedo?", "resposta": "Yes, you may"},
+  {"tema": "Asking Permission - May I", "pergunta": "May I speak to the teacher?", "traducao": "Posso falar com o professor?", "resposta": "Yes, you may"}
+]
