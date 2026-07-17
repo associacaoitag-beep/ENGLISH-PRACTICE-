@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Definições - ENGLISH PRACTICE</title>
+    <title>ENGLISH PRACTICE - Definições</title>
     <link rel="stylesheet" href="bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -23,59 +23,106 @@
         <nav>
             <a href="index.html"><i class="bi bi-house-door"></i> Início</a>
             <a href="membros.html"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="equipes.html"><i class="bi bi-diagram-3"></i> Gerir Equipes</a>
             <a href="config.html" class="ativo"><i class="bi bi-gear"></i> Definições</a>
             <a href="relatorios.html"><i class="bi bi-files"></i> Banco de Perguntas</a>
         </nav>
     </aside>
+
     <div class="overlay" id="overlay"></div>
 
     <main class="container">
         <div class="card">
             <div class="card-header">
-                <h2>Definições do Sistema</h2>
-            </div>
-            
-            <!-- ESCOLHA DA FONTE -->
-            <div class="form-group">
-                <label>Fonte das Perguntas</label>
-                <div style="display:flex; gap:20px; margin-top:8px;">
-                    <label style="font-weight:400; cursor:pointer;"><input type="radio" name="fonte" id="fonte-api" value="api"> Usar API Externa</label>
-                    <label style="font-weight:400; cursor:pointer;"><input type="radio" name="fonte" id="fonte-bd" value="bd" checked> Usar Banco de Dados Local</label>
-                </div>
+                <h2><i class="bi bi-gear"></i> Definições</h2>
             </div>
 
-            <!-- BLOCO DA API -->
-            <div id="config-api" style="display:none; border-left:3px solid var(--azul-botao--); padding-left:15px; margin-bottom:20px;">
-                <div class="form-group">
-                    <label for="api-key">Chave da API</label>
-                    <input type="password" id="api-key" placeholder="sk-xxxxxxxxxxxxxxxx" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-                    <small style="color:#6B7280;">A chave fica salva apenas neste navegador. Não é enviada para nenhum servidor.</small>
+            <h3 style="margin-top:20px; margin-bottom:15px;">⚙️ Modo de Jogo</h3>
+            <div style="margin-bottom:20px;">
+                <label style="display:flex; align-items:center; margin-bottom:10px;">
+                    <input type="radio" name="modo" id="modo-rifa" value="rifa" style="margin-right:10px;">
+                    <span><b>Modo Rifa</b> - Sorteia membros individuais</span>
+                </label>
+                <label style="display:flex; align-items:center;">
+                    <input type="radio" name="modo" id="modo-equipe" value="equipe" style="margin-right:10px;">
+                    <span><b>Modo Equipe</b> - Competição entre equipes</span>
+                </label>
+            </div>
+
+            <h3 style="margin-top:25px; margin-bottom:15px;">📚 Fonte de Perguntas</h3>
+            <div style="margin-bottom:20px;">
+                <label style="display:flex; align-items:center; margin-bottom:10px;">
+                    <input type="radio" name="fonte" id="fonte-api" value="api" style="margin-right:10px;">
+                    <span><b>API (IA Aberta)</b> - Gerar perguntas com OpenRouter</span>
+                </label>
+                <label style="display:flex; align-items:center;">
+                    <input type="radio" name="fonte" id="fonte-bd" value="bd" style="margin-right:10px;">
+                    <span><b>Banco de Dados Local</b> - Usar perguntas armazenadas</span>
+                </label>
+            </div>
+
+            <div id="config-api" style="display:none; background:#F3F4F6; padding:20px; border-radius:8px; margin-bottom:20px; border-left:4px solid #00509D;">
+                <h4 style="margin-bottom:15px;">🤖 Configuração OpenRouter (Modelos Abertos)</h4>
+                
+                <div style="background:white; padding:15px; border-radius:6px; margin-bottom:15px; border:1px solid #D1D5DB;">
+                    <p style="margin-bottom:10px; color:#6B7280;">
+                        <i class="bi bi-info-circle"></i> OpenRouter oferece acesso a modelos de IA abertos <b>GRATUITOS</b>.
+                    </p>
+                    <p style="margin-bottom:10px; color:#6B7280;">
+                        Obtenha sua chave em: <a href="https://openrouter.io/keys" target="_blank" style="color:#00509D; font-weight:bold;">openrouter.io/keys</a>
+                    </p>
                 </div>
+
                 <div class="form-group">
-                    <label for="modelo-api">Modelo</label>
-                    <select id="modelo-api" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-                        <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
-                        <option value="gpt-4o-mini">GPT-4o Mini</option>
+                    <label for="openrouter-key"><b>🔑 Chave OpenRouter</b></label>
+                    <input type="password" id="openrouter-key" class="input-field" placeholder="sk-or-v1-..." style="font-family: monospace;">
+                    <small style="color:#6B7280; display:block; margin-top:8px;">
+                        ✅ Armazenada APENAS no seu navegador (localStorage)
+                        <br>🔒 Nunca será compartilhada com terceiros
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="openrouter-modelo"><b>🧠 Modelo de IA</b></label>
+                    <select id="openrouter-modelo" class="input-field">
+                        <option value="mistralai/mistral-7b-instruct:free" selected>⚡ Mistral 7B (Rápido e Preciso - RECOMENDADO)</option>
+                        <option value="meta-llama/llama-2-7b-chat:free">🦙 Llama 2 (Equilibrado)</option>
+                        <option value="google/palm-2-chat-bison:free">🔷 Google PaLM 2</option>
+                        <option value="nous-hermes-2-mistral-7b-dpo:free">🧠 Nous Hermes 2</option>
+                        <option value="nousresearch/nous-hermes-2-mixtral-8x7b-sft:free">🚀 Nous Hermes Mixtral (Mais Potente)</option>
                     </select>
+                    <small style="color:#6B7280; display:block; margin-top:8px;">
+                        💡 Todos os modelos são GRATUITOS. Mistral é o recomendado por ser rápido.
+                    </small>
                 </div>
             </div>
 
-            <!-- BLOCO DO BANCO DE DADOS -->
-            <div id="config-bd">
+            <div id="config-bd" style="background:#F3F4F6; padding:20px; border-radius:8px; margin-bottom:20px; border-left:4px solid #16A34A;">
+                <h4 style="margin-bottom:15px;">📊 Configuração Banco de Dados</h4>
                 <div class="form-group">
-                    <label for="qtd-perguntas">Nº de Perguntas por Membro</label>
-                    <input type="number" id="qtd-perguntas" value="2" min="1" max="10" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
+                    <label for="qtd-perguntas">Quantidade de Perguntas por Rodada</label>
+                    <input type="number" id="qtd-perguntas" min="1" max="20" value="2" class="input-field">
                 </div>
-                <div class="form-group">
-                    <label for="tempo-resposta">Tempo por Pergunta (segundos)</label>
-                    <input type="number" id="tempo-resposta" value="30" min="10" max="120" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-                </div>
-                <p style="font-size:13px; color:#6B7280;">Para adicionar perguntas vá em "Banco de Perguntas" no menu.</p>
             </div>
 
-            <button class="btn-principal" id="btn-salvar-config">Salvar Definições</button>
+            <div class="form-group">
+                <label for="tempo-resposta">⏱️ Tempo de Resposta (segundos)</label>
+                <input type="number" id="tempo-resposta" min="5" max="120" value="30" class="input-field">
+            </div>
+
+            <button class="btn-principal" id="btn-salvar-config" style="margin-bottom:15px;">
+                <i class="bi bi-check-circle"></i> Salvar Definições
+            </button>
+
+            <div style="background:#E8F5E9; padding:12px; border-radius:6px; border-left:4px solid #16A34A;">
+                <small style="color:#2E7D32;">
+                    <b>✅ Dica:</b> Use modelos abertos do OpenRouter! São gratuitos, rápidos e oferecem boa qualidade para gerar perguntas.
+                </small>
+            </div>
         </div>
     </main>
+
+    <script src="config-ia.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
