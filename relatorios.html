@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Banco de Perguntas - ENGLISH PRACTICE</title>
-    <link rel="stylesheet" href="bootstrap-icons.css">
+    <title>ENGLISH PRACTICE - Banco de Perguntas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,51 +23,66 @@
         <nav>
             <a href="index.html"><i class="bi bi-house-door"></i> Início</a>
             <a href="membros.html"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="equipes.html"><i class="bi bi-diagram-3"></i> Gerir Equipes</a>
             <a href="config.html"><i class="bi bi-gear"></i> Definições</a>
             <a href="relatorios.html" class="ativo"><i class="bi bi-files"></i> Banco de Perguntas</a>
         </nav>
     </aside>
+
     <div class="overlay" id="overlay"></div>
 
-<main class="container">
-    <div class="card">
-        <div class="card-header"><h2>Cadastrar Nova Pergunta</h2></div>
-        <div class="form-group">
-            <label for="tema-pergunta">Tema</label>
-            <input type="text" id="tema-pergunta" placeholder="Ex: Verb to be, Days of the week" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-        </div>
-        <div class="form-group">
-            <label for="texto-pergunta">Pergunta</label>
-            <textarea id="texto-pergunta" rows="3" placeholder="Ex: What is the past of 'go'?" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;"></textarea>
-        </div>
-        <div class="form-group">
-            <label for="resposta-pergunta">Resposta Correta</label>
-            <input type="text" id="resposta-pergunta" placeholder="Ex: went" style="width:100%; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-        </div>
-        <div class="form-group">
-    <label for="traducao-pergunta">Tradução da Pergunta</label>
-    <input type="text" id="traducao-pergunta" placeholder="Que dia vem depois de Segunda?">
-</div>
-        <button class="btn-principal" id="btn-salvar-pergunta">Salvar no Banco</button>
-        <div class="card" style="margin-top:20px;">
-    <div class="card-header"><h2>Banco de Perguntas: <span id="total-perguntas">0</span></h2></div>
-    <div id="lista-perguntas"></div>
-    
-    <div style="display:flex; gap:10px; margin-top:20px;">
-        <button class="btn-principal" id="btn-exportar">Exportar banco.json</button>
-        <label for="btn-importar" class="btn-principal" style="background:#6B7280; text-align:center; cursor:pointer;">Importar banco.json</label>
-        <input type="file" id="btn-importar" accept=".json" style="display:none;">
-    </div>
-    <button class="btn-principal" id="btn-limpar-bd" style="background:var(--vermelho--); margin-top:10px;">Limpar Banco</button>
-</div>
-    </div>
+    <main class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2><i class="bi bi-files"></i> Banco de Perguntas</h2>
+            </div>
+            <p class="card-desc">Total de Perguntas: <b><span id="total-perguntas">0</span></b></p>
 
-    <div class="card" style="margin-top:20px;">
-        <div class="card-header"><h2>Banco de Perguntas: <span id="total-perguntas">0</span></h2></div>
-        <div id="lista-perguntas"></div>
-        <button class="btn-principal" id="btn-limpar-bd" style="background:var(--vermelho--); margin-top:20px;">Limpar Banco</button>
-    </div>
-</main>
+            <div style="margin-bottom:25px; padding:15px; background:#F3F4F6; border-radius:6px;">
+                <h3 style="margin-bottom:15px;"><i class="bi bi-plus-circle"></i> Adicionar Pergunta</h3>
+                <div class="form-group">
+                    <label for="tema-pergunta">Tema</label>
+                    <input type="text" id="tema-pergunta" class="input-field" placeholder="Ex: Verbos">
+                </div>
+                <div class="form-group">
+                    <label for="texto-pergunta">Pergunta (Inglês)</label>
+                    <textarea id="texto-pergunta" rows="3" placeholder="Escreva a pergunta em inglês"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="traducao-pergunta">Tradução</label>
+                    <textarea id="traducao-pergunta" rows="2" placeholder="Tradução para português"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="resposta-pergunta">Resposta</label>
+                    <input type="text" id="resposta-pergunta" class="input-field" placeholder="Resposta correta">
+                </div>
+                <button class="btn-principal" id="btn-salvar-pergunta">
+                    <i class="bi bi-check-circle"></i> Salvar Pergunta
+                </button>
+            </div>
+
+            <div style="margin-bottom:20px; display:flex; gap:10px;">
+                <button class="btn-principal" id="btn-exportar" style="flex:1; background:#16A34A;">
+                    <i class="bi bi-download"></i> Exportar
+                </button>
+                <button class="btn-principal" id="btn-limpar-bd" style="flex:1; background:var(--vermelho--);">
+                    <i class="bi bi-trash"></i> Limpar
+                </button>
+            </div>
+
+            <div style="margin-bottom:20px;">
+                <label for="btn-importar">Importar Banco</label>
+                <input type="file" id="btn-importar" class="input-field" accept=".json">
+            </div>
+
+            <div>
+                <h3 style="margin-bottom:15px;">Perguntas Cadastradas</h3>
+                <div id="lista-perguntas"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="config-ia.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerir Membros - ENGLISH PRACTICE</title>
-    <link rel="stylesheet" href="bootstrap-icons.css">
+    <title>ENGLISH PRACTICE - Gerir Membros</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -23,30 +23,39 @@
         <nav>
             <a href="index.html"><i class="bi bi-house-door"></i> Início</a>
             <a href="membros.html" class="ativo"><i class="bi bi-people"></i> Gerir Membros</a>
+            <a href="equipes.html"><i class="bi bi-diagram-3"></i> Gerir Equipes</a>
             <a href="config.html"><i class="bi bi-gear"></i> Definições</a>
             <a href="relatorios.html"><i class="bi bi-files"></i> Banco de Perguntas</a>
         </nav>
     </aside>
+
     <div class="overlay" id="overlay"></div>
 
     <main class="container">
         <div class="card">
             <div class="card-header">
-                <h2>Gerir Membros da Turma</h2>
+                <h2><i class="bi bi-people"></i> Gerir Membros</h2>
             </div>
-            <p class="card-desc">Adicione ou remova membros para o "Modo Rifa"</p>
+            <p class="card-desc">Total de Membros: <b><span id="total-membros">0</span></b></p>
 
-            <div class="form-group" style="display:flex; gap:10px;">
-                <input type="text" id="input-novo-membro" placeholder="Digite o nome do membro" style="flex:1; padding:12px; border:1px solid var(--borda--); border-radius:4px;">
-                <button class="btn-principal" id="btn-add-membro" style="width:auto; padding:12px 20px;">Adicionar</button>
+            <div style="margin-bottom:20px;">
+                <label for="input-novo-membro">Nome do Membro:</label>
+                <div style="display:flex; gap:10px;">
+                    <input type="text" id="input-novo-membro" class="input-field" placeholder="Ex: João Silva" style="flex:1;">
+                    <button class="btn-principal" id="btn-add-membro" style="flex:0.3; padding:12px;">
+                        <i class="bi bi-plus-circle"></i> Adicionar
+                    </button>
+                </div>
             </div>
 
-            <h3 style="margin-top:20px; margin-bottom:10px; font-size:16px;">Lista de Membros: <span id="total-membros">0</span></h3>
-            <ul id="lista-membros" style="list-style:none;">
-                <!-- Os membros vão aparecer aqui via JS -->
-            </ul>
+            <div>
+                <h3 style="margin-bottom:15px;">Membros Cadastrados</h3>
+                <div id="lista-membros"></div>
+            </div>
         </div>
     </main>
+
+    <script src="config-ia.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
